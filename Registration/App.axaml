@@ -1,0 +1,19 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Registration.App"
+             xmlns:local="using:Registration"
+			 xmlns:materialtheme="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+		<materialtheme:MaterialTheme
+			BaseTheme="Dark"
+			PrimaryColor="DeepPurple"
+			SecondaryColor="Lime" />
+    </Application.Styles>
+</Application>

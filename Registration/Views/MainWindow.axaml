@@ -1,0 +1,66 @@
+<Window
+    x:Class="Registration.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:p1="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+    xmlns:vm="using:Registration.ViewModels"
+    Title="Registration"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    mc:Ignorable="d">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Border
+        MinWidth="600"
+        MinHeight="400"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TabControl Margin="10">
+            <TabControl.Items>
+                <TabItem Header="Log in">
+                    <StackPanel Margin="10" Spacing="14">
+                        <TextBox
+                            p1:TextFieldAssist.Label="Username"
+                            Classes="outline"
+                            Theme="{StaticResource OutlineTextBox}"
+                            UseFloatingWatermark="True" />
+                        <TextBox
+                            p1:TextFieldAssist.Label="Password"
+                            Classes="outline revealPasswordButton"
+                            PasswordChar="*"
+                            Theme="{StaticResource OutlineTextBox}"
+                            UseFloatingWatermark="True" />
+                        <Grid ColumnDefinitions="3* *" RowDefinitions="*">
+                            <CheckBox
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Content="Remember me"
+                                IsChecked="True" />
+                            <ToggleButton
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Theme="{StaticResource MaterialFlatToggleButton}">
+                                Forgot Password?
+                            </ToggleButton>
+                        </Grid>
+                        <Button
+                            Content="Log in"
+                            CornerRadius="16"
+                            ToolTip.Tip="Regular button with customized corner radius (16dp)." />
+                    </StackPanel>
+                </TabItem>
+
+
+                <TabItem Header="Register now" />
+            </TabControl.Items>
+        </TabControl>
+    </Border>
+
+</Window>
